@@ -22,7 +22,7 @@ export default function Navbar({ user, setUser }) {
       <div className={styles.right}>
         {user?.username ? (
           <>
-            <Link to='/'>{user.username}</Link>
+            <Link to='/profile'>{user.username}</Link>
             <Link onClick={logoutHandler}>Выйти</Link>
           </>
         ) : (

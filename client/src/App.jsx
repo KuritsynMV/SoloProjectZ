@@ -5,7 +5,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import SigninPage from './pages/SigninPage/SigninPage';
 import SignupPage from './pages/SignupPage/SignupPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 import axiosInstance, { setAccessToken } from './axiosInstance';
+import DetailedPage from './pages/DetailedPage/DetailedPage';
 
 function App() {
   const [user, setUser] = useState({});
@@ -37,6 +39,14 @@ function App() {
         {
           path: '/signup',
           element: <SignupPage setUser={setUser} />,
+        },
+        {
+          path: '/profile',
+          element: <ProfilePage setUser={setUser} />,
+        },
+        {
+          path: `/detailed/:id`,
+          element: <DetailedPage />,
         },
       ],
     },
